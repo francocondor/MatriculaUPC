@@ -11,5 +11,11 @@ namespace MatriculaUPC.Entidades
         public String CodigoCurso { get; set; }
         public String NombreCurso { get; set; }
 
+        public CCurso(String codigoCurso, String nombreCurso)
+        {
+            CodigoCurso = codigoCurso;
+            NombreCurso = nombreCurso;
+        }
+
     }
 }
