@@ -8,7 +8,8 @@ namespace MatriculaUPC.Entidades
 {
     internal class CCurso
     {
-        public String Codigo { get; set; }
-        public String Nombre { get; set; }
+        public String CodigoCurso { get; set; }
+        public String NombreCurso { get; set; }
+
     }
 }
