@@ -34,13 +34,20 @@
             txtNombreCurso = new TextBox();
             btnAgregarCurso = new Button();
             dgListaCursos = new DataGridView();
+            dgListaAlumnos = new DataGridView();
+            btnAgregarAlumno = new Button();
+            txtNombreAlumno = new TextBox();
+            txtCodigoAlumno = new TextBox();
+            label3 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgListaCursos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgListaAlumnos).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(28, 22);
+            label1.Location = new Point(21, 25);
             label1.Name = "label1";
             label1.Size = new Size(80, 15);
             label1.TabIndex = 0;
@@ -49,7 +56,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(28, 63);
+            label2.Location = new Point(21, 66);
             label2.Name = "label2";
             label2.Size = new Size(85, 15);
             label2.TabIndex = 1;
@@ -57,21 +64,21 @@
             // 
             // txtCodigoCurso
             // 
-            txtCodigoCurso.Location = new Point(136, 22);
+            txtCodigoCurso.Location = new Point(129, 25);
             txtCodigoCurso.Name = "txtCodigoCurso";
             txtCodigoCurso.Size = new Size(184, 23);
             txtCodigoCurso.TabIndex = 2;
             // 
             // txtNombreCurso
             // 
-            txtNombreCurso.Location = new Point(136, 63);
+            txtNombreCurso.Location = new Point(129, 66);
             txtNombreCurso.Name = "txtNombreCurso";
             txtNombreCurso.Size = new Size(184, 23);
             txtNombreCurso.TabIndex = 3;
             // 
             // btnAgregarCurso
             // 
-            btnAgregarCurso.Location = new Point(28, 108);
+            btnAgregarCurso.Location = new Point(21, 111);
             btnAgregarCurso.Name = "btnAgregarCurso";
             btnAgregarCurso.Size = new Size(151, 23);
             btnAgregarCurso.TabIndex = 4;
@@ -82,16 +89,72 @@
             // dgListaCursos
             // 
             dgListaCursos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgListaCursos.Location = new Point(28, 162);
+            dgListaCursos.Location = new Point(21, 165);
             dgListaCursos.Name = "dgListaCursos";
             dgListaCursos.Size = new Size(292, 219);
             dgListaCursos.TabIndex = 5;
+            // 
+            // dgListaAlumnos
+            // 
+            dgListaAlumnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgListaAlumnos.Location = new Point(344, 165);
+            dgListaAlumnos.Name = "dgListaAlumnos";
+            dgListaAlumnos.Size = new Size(292, 219);
+            dgListaAlumnos.TabIndex = 11;
+            // 
+            // btnAgregarAlumno
+            // 
+            btnAgregarAlumno.Location = new Point(344, 111);
+            btnAgregarAlumno.Name = "btnAgregarAlumno";
+            btnAgregarAlumno.Size = new Size(151, 23);
+            btnAgregarAlumno.TabIndex = 10;
+            btnAgregarAlumno.Text = "Agregar curso";
+            btnAgregarAlumno.UseVisualStyleBackColor = true;
+            btnAgregarAlumno.Click += btnAgregarAlumno_Click;
+            // 
+            // txtNombreAlumno
+            // 
+            txtNombreAlumno.Location = new Point(452, 66);
+            txtNombreAlumno.Name = "txtNombreAlumno";
+            txtNombreAlumno.Size = new Size(184, 23);
+            txtNombreAlumno.TabIndex = 9;
+            // 
+            // txtCodigoAlumno
+            // 
+            txtCodigoAlumno.Location = new Point(452, 25);
+            txtCodigoAlumno.Name = "txtCodigoAlumno";
+            txtCodigoAlumno.Size = new Size(184, 23);
+            txtCodigoAlumno.TabIndex = 8;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(344, 66);
+            label3.Name = "label3";
+            label3.Size = new Size(97, 15);
+            label3.TabIndex = 7;
+            label3.Text = "Nombre Alumno";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(344, 25);
+            label4.Name = "label4";
+            label4.Size = new Size(92, 15);
+            label4.TabIndex = 6;
+            label4.Text = "Codigo Alumno";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(890, 450);
+            Controls.Add(dgListaAlumnos);
+            Controls.Add(btnAgregarAlumno);
+            Controls.Add(txtNombreAlumno);
+            Controls.Add(txtCodigoAlumno);
+            Controls.Add(label3);
+            Controls.Add(label4);
             Controls.Add(dgListaCursos);
             Controls.Add(btnAgregarCurso);
             Controls.Add(txtNombreCurso);
@@ -101,6 +164,7 @@
             Name = "Form1";
             Text = "Matricula UPC";
             ((System.ComponentModel.ISupportInitialize)dgListaCursos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgListaAlumnos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -113,5 +177,11 @@
         private TextBox txtNombreCurso;
         private Button btnAgregarCurso;
         private DataGridView dgListaCursos;
+        private DataGridView dgListaAlumnos;
+        private Button btnAgregarAlumno;
+        private TextBox txtNombreAlumno;
+        private TextBox txtCodigoAlumno;
+        private Label label3;
+        private Label label4;
     }
 }
