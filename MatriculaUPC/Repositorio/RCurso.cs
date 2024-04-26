@@ -11,7 +11,7 @@ namespace MatriculaUPC.Repositorio
     {
         // repository class
 
-        private List<CCurso> listaCursos;
+        public List<CCurso> listaCursos { get; set; }
 
         public RCurso()
         {
@@ -27,5 +27,19 @@ namespace MatriculaUPC.Repositorio
         {
             return listaCursos;
         }
+
+        public CCurso ObtenerCursoPorCodigo(String codigoCurso)
+        {
+            foreach (CCurso curso in listaCursos)
+            {
+                if (curso.CodigoCurso == codigoCurso)
+                {
+                    return curso;
+                }
+            }
+            return null;
+        }
+
+
     }
 }

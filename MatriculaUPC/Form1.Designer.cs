@@ -40,6 +40,7 @@
             txtCodigoAlumno = new TextBox();
             label3 = new Label();
             label4 = new Label();
+            btnInsertarAlumnoEnCurso = new Button();
             ((System.ComponentModel.ISupportInitialize)dgListaCursos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgListaAlumnos).BeginInit();
             SuspendLayout();
@@ -93,6 +94,8 @@
             dgListaCursos.Name = "dgListaCursos";
             dgListaCursos.Size = new Size(292, 219);
             dgListaCursos.TabIndex = 5;
+            dgListaCursos.CellContentClick += dgListaCursos_CellContentClick;
+            dgListaCursos.CellDoubleClick += dgListaCursos_CellDoubleClick;
             // 
             // dgListaAlumnos
             // 
@@ -144,11 +147,21 @@
             label4.TabIndex = 6;
             label4.Text = "Codigo Alumno";
             // 
+            // btnInsertarAlumnoEnCurso
+            // 
+            btnInsertarAlumnoEnCurso.Location = new Point(678, 111);
+            btnInsertarAlumnoEnCurso.Name = "btnInsertarAlumnoEnCurso";
+            btnInsertarAlumnoEnCurso.Size = new Size(237, 23);
+            btnInsertarAlumnoEnCurso.TabIndex = 12;
+            btnInsertarAlumnoEnCurso.Text = "Insertar Alumno En Curso";
+            btnInsertarAlumnoEnCurso.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(890, 450);
+            ClientSize = new Size(976, 450);
+            Controls.Add(btnInsertarAlumnoEnCurso);
             Controls.Add(dgListaAlumnos);
             Controls.Add(btnAgregarAlumno);
             Controls.Add(txtNombreAlumno);
@@ -163,6 +176,7 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "Matricula UPC";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dgListaCursos).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgListaAlumnos).EndInit();
             ResumeLayout(false);
@@ -183,5 +197,6 @@
         private TextBox txtCodigoAlumno;
         private Label label3;
         private Label label4;
+        private Button btnInsertarAlumnoEnCurso;
     }
 }

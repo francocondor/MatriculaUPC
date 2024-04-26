@@ -10,22 +10,35 @@ namespace MatriculaUPC.Servicios
 {
     internal class SCurso
     {
-        private RCurso repositorio;
+        private RCurso repositorioCurso;
+        private RAlumno repositorioAlumno;
 
         public SCurso()
         {
-            repositorio = new RCurso();
+            repositorioCurso = new RCurso();
+            repositorioAlumno = new RAlumno();
         }
 
         public void AgregarCurso(String codigoCurso, String nombreCurso)
         {
             CCurso curso = new CCurso(codigoCurso, nombreCurso);
-            repositorio.AgregarCurso(curso);
+            repositorioCurso.AgregarCurso(curso);
         }
 
         public List<CCurso> ObtenerCursos()
         {
-            return repositorio.ObtenerCursos();
+            return repositorioCurso.ObtenerCursos();
+        }
+
+        public void MatricularAlumno(String codigoCurso, String codigoAlumno)
+        {
+            CCurso curso = repositorioCurso.ObtenerCursoPorCodigo(codigoCurso);
+            CAlumno alumno = repositorioAlumno.ObtenerAlumnoPorCodigo(codigoAlumno);
+            if (curso != null && alumno != null)
+            {
+                curso.EstudiantesMatriculados.Add(alumno);
+            }
+            
         }
     }
 }

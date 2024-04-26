@@ -1,4 +1,7 @@
+using MatriculaUPC.Entidades;
 using MatriculaUPC.Servicios;
+using System.ComponentModel;
+using System;
 
 namespace MatriculaUPC
 {
@@ -31,10 +34,10 @@ namespace MatriculaUPC
 
         private void ActualizarListaCursos()
         {
+            List<CCurso> cursos = serviciosCurso.ObtenerCursos();
+            BindingList<CCurso> bindingList = new BindingList<CCurso>(cursos);
             dgListaCursos.DataSource = null;
-            var cursos = serviciosCurso.ObtenerCursos();
-            dgListaCursos.DataSource = cursos;
-
+            dgListaCursos.DataSource = bindingList;
         }
 
         private void btnAgregarAlumno_Click(object sender, EventArgs e)
@@ -54,6 +57,34 @@ namespace MatriculaUPC
             dgListaAlumnos.DataSource = null;
             var alumnos = serviciosAlumno.ObtenerAlumnos();
             dgListaAlumnos.DataSource = alumnos;
+
+        }
+
+        private void dgListaCursos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            // Comprueba si el índice de la fila es válido
+            if (e.RowIndex >= 0)
+            {
+                //DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+
+                //// Ahora puedes acceder a las celdas de la fila seleccionada
+                //string value1 = row.Cells["NombreDeColumna1"].Value.ToString();
+                //string value2 = row.Cells["NombreDeColumna2"].Value.ToString();
+
+                //// Muestra los datos
+                //MessageBox.Show("Valor 1: " + value1 + ", Valor 2: " + value2);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgListaCursos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

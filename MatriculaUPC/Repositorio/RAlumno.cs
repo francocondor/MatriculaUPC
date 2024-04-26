@@ -26,5 +26,17 @@ namespace MatriculaUPC.Repositorio
             return listaAlumnos;
         }
 
+        public CAlumno ObtenerAlumnoPorCodigo(String codigoAlumno)
+        {
+            foreach (CAlumno alumno in listaAlumnos)
+            {
+                if (alumno.CodigoAlumno == codigoAlumno)
+                {
+                    return alumno;
+                }
+            }
+            return null;
+        }
+
     }
 }
